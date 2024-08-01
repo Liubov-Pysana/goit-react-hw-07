@@ -3,9 +3,8 @@ import { createSelector } from "reselect";
 import axios from "axios";
 import { selectNameFilter } from "./filtersSlice";
 
-const BASE_URL = "YOUR-MOCKAPI-ENDPOINT";
+const BASE_URL = "https://66a7e0a953c13f22a3d1573e.mockapi.io";
 
-// Thunks for async operations
 export const fetchContacts = createAsyncThunk("contacts/fetchAll", async (_, thunkAPI) => {
     try {
         const response = await axios.get(`${BASE_URL}/contacts`);

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const BASE_URL = "https://66a7e0a953c13f22a3d1573e.mockapi.io";
 
-// Fetch contacts
+// Fetch all contacts
 export const fetchContacts = createAsyncThunk("contacts/fetchAll", async (_, thunkAPI) => {
     try {
         const response = await axios.get(`${BASE_URL}/contacts`);
@@ -23,7 +23,7 @@ export const addContact = createAsyncThunk("contacts/addContact", async (contact
     }
 });
 
-// Delete a contact by ID
+// Delete a contact
 export const deleteContact = createAsyncThunk("contacts/deleteContact", async (id, thunkAPI) => {
     try {
         await axios.delete(`${BASE_URL}/contacts/${id}`);
